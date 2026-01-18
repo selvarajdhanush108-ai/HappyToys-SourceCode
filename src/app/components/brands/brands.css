@@ -1,0 +1,72 @@
+/* SECTION */
+.brands-section {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+/* 🔑 SAME AS HERO CONTAINER */
+.brands-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px; /* 👈 MATCHES HERO SIDE PADDING */
+}
+
+/* VIEWPORT */
+.brands-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* TRACK */
+.brands-track {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.brands-track.no-transition {
+  transition: none;
+}
+
+/* BRAND ITEM */
+.brand-item {
+  min-width: 140px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brand-item img {
+  max-width: 120px;
+  max-height: 50px;
+  object-fit: contain;
+}
+
+/* HOVER */
+.brand-item:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .brands-container {
+    padding: 0 20px; /* mobile padding */
+  }
+
+  .brand-item {
+    min-width: 120px;
+  }
+
+  .brand-item img {
+    max-width: 100px;
+  }
+}

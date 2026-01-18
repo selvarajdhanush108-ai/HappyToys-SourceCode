@@ -1,0 +1,117 @@
+.age-section {
+  padding: 100px 40px;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.8s ease;
+}
+
+.age-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subtitle {
+  max-width: 620px;
+  margin: 14px auto 60px;
+  color: #6b7c85;
+}
+
+/* WRAPPER */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* VIEWPORT */
+.viewport {
+  width: 100%;
+  max-width: calc(170px * 5 + 40px * 4);
+  overflow: hidden;
+}
+
+/* TRACK */
+.track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 40px;
+
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.track.no-transition {
+  transition: none;
+}
+
+/* CARD */
+.age-card {
+  min-width: 170px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+/* BLOB */
+.blob {
+  width: 170px;
+  height: 170px;
+  border-radius: 55% 45% 60% 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+.blob img {
+  width: 95px;
+  transform: scale(1.7); /* 🔍 subtle zoom */
+  transition: transform 0.4s ease;
+}
+
+
+/* TEXT */
+.age-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2a37;
+}
+
+/* ARROWS */
+.nav {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #1dc9a0;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.nav.left {
+  left: -22px;
+}
+
+.nav.right {
+  right: -22px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .viewport {
+    max-width: calc(170px * 3 + 40px * 2);
+  }
+
+  .blob {
+    width: 130px;
+    height: 130px;
+  }
+
+  .blob img {
+    width: 70px;
+  }
+}

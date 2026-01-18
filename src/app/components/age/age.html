@@ -1,0 +1,40 @@
+<section class="age-section" [class.show]="show">
+
+  <h2>Shop By Age</h2>
+  <p class="subtitle">
+    Interdum et malesuada fames ac ante ipsum primis in faucibus
+  </p>
+
+  <div
+    class="slider-wrapper"
+    (mouseenter)="stopAutoSlide()"
+    (mouseleave)="startAutoSlide()"
+  >
+
+    <!-- LEFT -->
+    <button class="nav left" (click)="prev()">&#10094;</button>
+
+    <!-- VIEWPORT -->
+    <div class="viewport">
+      <div
+        class="track"
+        [class.no-transition]="!transitionEnabled"
+        [style.transform]="'translateX(-' + (currentIndex * slideWidth) + 'px)'"
+      >
+        @for (age of slides; track age.label + $index) {
+          <div class="age-card">
+            <div class="blob" [style.background]="age.bg">
+              <img [src]="age.img" [alt]="age.label" />
+            </div>
+            <h4>{{ age.label }}</h4>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <button class="nav right" (click)="next()">&#10095;</button>
+
+  </div>
+
+</section>

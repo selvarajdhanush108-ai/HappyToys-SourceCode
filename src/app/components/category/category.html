@@ -1,0 +1,40 @@
+<section class="category-section" [class.show]="show">
+
+  <h2>Shop By Category</h2>
+  <p class="subtitle">
+    Interdum et malesuada fames ac ante ipsum primis in faucibus
+  </p>
+
+  <div
+    class="slider-wrapper"
+    (mouseenter)="stopAutoSlide()"
+    (mouseleave)="startAutoSlide()"
+  >
+
+    <!-- LEFT ARROW -->
+    <button class="nav left" (click)="prev()">&#10094;</button>
+
+    <!-- VIEWPORT -->
+    <div class="viewport">
+      <div
+        class="track"
+        [class.no-transition]="!transitionEnabled"
+        [style.transform]="'translateX(-' + (currentIndex * slideWidth) + 'px)'"
+      >
+        @for (cat of slides; track cat.title + $index) {
+          <div class="category-card">
+            <div class="icon" [style.background]="cat.bg">
+              <img [src]="cat.img" [alt]="cat.title" />
+            </div>
+            <h4>{{ cat.title }}</h4>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- RIGHT ARROW -->
+    <button class="nav right" (click)="next()">&#10095;</button>
+
+  </div>
+
+</section>

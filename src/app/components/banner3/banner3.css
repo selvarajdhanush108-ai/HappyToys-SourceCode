@@ -1,0 +1,135 @@
+/* SECTION */
+.banner3-section {
+  /* padding: 80px 40px; */
+  max-width: 1320px;
+padding: 0 32px;
+margin: auto;
+
+}
+
+/* GRID */
+.banner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.banner-card {
+  position: relative;
+  height: 240px;
+  border-radius: 20px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  padding: 35px;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.content h3 span {
+  font-weight: 500;
+}
+
+.content p {
+  margin: 12px 0 18px;
+  font-size: 14px;
+}
+
+.btn {
+  width: fit-content;
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: #fff;
+  color: #1dc9a0;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* PLUS → RECTANGLE OPEN EFFECT */
+/* ============================= */
+
+.hover-plus {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 2;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+/* VERTICAL BAR (starts thin, opens wide) */
+.hover-plus.vertical {
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* HORIZONTAL BAR (starts thin, opens tall) */
+.hover-plus.horizontal {
+  height: 0;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/* HOVER STATE → RECTANGLE FEEL */
+.banner-card:hover .hover-plus.vertical {
+  width: 70%;
+  opacity: .5;
+}
+
+.banner-card:hover .hover-plus.horizontal {
+  height: 70%;
+  opacity: .5;
+}
+
+/* OPTIONAL: slight image darken on hover */
+.banner-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.banner-card:hover::after {
+  opacity: .5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .banner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-card {
+    height: 220px;
+  }
+}

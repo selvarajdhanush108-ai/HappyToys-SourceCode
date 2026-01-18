@@ -1,0 +1,49 @@
+<section class="flash-sale-section">
+  <div class="flash-sale-container">
+
+    <h2 class="title">Flash Sale</h2>
+
+    <div
+      class="slider-viewport"
+      (mouseenter)="onEnter()"
+      (mouseleave)="onLeave()"
+      (mousemove)="onMouseMove($event)"
+      (dblclick)="onDoubleClick($event)"
+    >
+      <div
+        class="slider-track"
+        [style.transform]="'translateX(-' + (currentIndex * slideWidth) + 'px)'"
+      >
+        @for (product of loopProducts; track product.name + $index) {
+          <div class="flash-card">
+
+            @if (product.badge) {
+              <span class="badge">{{ product.badge }}</span>
+            }
+
+            <img [src]="product.img" />
+
+            <h4>{{ product.name }}</h4>
+
+            <div class="price">
+              <span class="current">{{ product.price }}</span>
+              @if (product.oldPrice) { <del>{{ product.oldPrice }}</del> }
+            </div>
+
+          </div>
+        }
+      </div>
+
+      <!-- DRAG CURSOR -->
+      <div
+        class="drag-cursor"
+        [class.show]="showCursor"
+        [style.left.px]="cursorX"
+        [style.top.px]="cursorY"
+      >
+        ‹ DRAG ›
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,99 @@
+.flash-sale-section {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.flash-sale-container {
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.slider-viewport {
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+}
+
+.slider-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flash-card {
+  width: 240px;
+  flex-shrink: 0;
+  border: 1px solid #e8f0f2;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.flash-card img {
+  width: 120px;
+  margin: 18px auto;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #12c7a5;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+}
+
+.price .current {
+  color: #12c7a5;
+  font-weight: 700;
+}
+
+.rating {
+  color: #ff9800;
+}
+
+/* DRAG CURSOR */
+.drag-cursor {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  background: #12c7a5;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.6);
+  opacity: 0;
+
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 9999;
+}
+
+.drag-cursor.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* Disable text selection ONLY inside slider */
+.slider-viewport,
+.slider-viewport * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

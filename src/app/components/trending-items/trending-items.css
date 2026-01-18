@@ -1,0 +1,186 @@
+/* =====================
+   BASE SECTION
+===================== */
+.trending-section {
+  background: #e9fbf8;
+  padding: 90px 0;
+  overflow: hidden;
+}
+
+/* MATCH HERO WIDTH */
+.trending-container {
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* =====================
+   FADE UP ANIMATION
+===================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+   HEADER
+===================== */
+.trending-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.trending-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* =====================
+   TABS
+===================== */
+.tabs {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+}
+
+.tabs li {
+  cursor: pointer;
+  font-size: 15px;
+  color: #666;
+  position: relative;
+}
+
+.tabs li.active {
+  color: #00bfa5;
+  font-weight: 600;
+}
+
+.tabs li.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00bfa5;
+}
+
+/* =====================
+   CONTENT
+===================== */
+.trending-content {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 30px;
+}
+
+/* LEFT BANNER */
+.promo-banner {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.promo-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =====================
+   PRODUCTS
+===================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+
+.product-card h4 {
+  font-size: 15px;
+  margin: 12px 0 6px;
+}
+
+/* PRICE */
+.price {
+  display: flex;
+  gap: 8px;
+}
+
+.price .current {
+  color: #00bfa5;
+  font-weight: 600;
+}
+
+.price del {
+  color: #999;
+}
+
+.rating {
+  color: #ff9800;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #00bfa5;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* =====================
+   CLOUD WAVES
+===================== */
+.cloud {
+  width: 100%;
+  height: 90px;
+  background: url('/assets/clouds/cloud.svg') repeat-x;
+  animation: cloudMove 35s linear infinite;
+}
+
+.cloud-top {
+  margin-bottom: -1px;
+}
+
+.cloud-bottom {
+  margin-top: -1px;
+  transform: rotate(180deg);
+}
+
+@keyframes cloudMove {
+  from { background-position-x: 0; }
+  to { background-position-x: 2400px; }
+}

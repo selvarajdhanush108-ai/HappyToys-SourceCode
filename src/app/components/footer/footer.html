@@ -1,0 +1,48 @@
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND / ABOUT -->
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="assets/logo.png" alt="HappyToys" />
+        <span>HappyToys</span>
+      </div>
+
+      <p class="desc">
+        Phasellus ultricies aliquam volutpat ullamcorper laoreet neque,
+        a lacinia curabitur lacinia mollis
+      </p>
+
+      <div class="socials">
+        <a><i class="fa-brands fa-facebook-f"></i></a>
+        <a><i class="fa-brands fa-twitter"></i></a>
+        <a><i class="fa-brands fa-linkedin-in"></i></a>
+        <a><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- INFO GRID (2x2) -->
+    <div class="footer-info-grid">
+      @for (item of infos; track item.title) {
+        <div class="info-card">
+          <div class="icon" [style.background]="item.color">
+            <i [class]="item.icon"></i>
+          </div>
+
+          <div class="text">
+            <span class="title">{{ item.title }}</span>
+            <strong class="value">{{ item.value }}</strong>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    © Copyright 2026 Happytoys. All Rights Reserved.
+  </div>
+
+</footer>

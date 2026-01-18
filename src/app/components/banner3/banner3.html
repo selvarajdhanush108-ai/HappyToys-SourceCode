@@ -1,0 +1,28 @@
+<section class="banner3-section">
+  <div class="banner-grid">
+
+    @for (banner of banners; track banner.title) {
+      <div
+        class="banner-card"
+        [style.background-image]="'url(' + banner.bg + ')'"
+      >
+
+        <!-- PLUS HOVER EFFECT -->
+        <span class="hover-plus vertical"></span>
+        <span class="hover-plus horizontal"></span>
+
+        <!-- CONTENT -->
+        <div class="content">
+          <h3>
+            {{ banner.title }} <br />
+            <span>{{ banner.subtitle }}</span>
+          </h3>
+          <p>{{ banner.offer }}</p>
+          <a class="btn">Shop Now →</a>
+        </div>
+
+      </div>
+    }
+
+  </div>
+</section>

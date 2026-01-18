@@ -1,0 +1,25 @@
+<div
+  class="scroll-progress"
+  [class.show]="show"
+  (click)="scrollToTop()"
+>
+
+  <svg viewBox="0 0 100 100">
+    <circle
+      class="bg"
+      cx="50"
+      cy="50"
+      r="45"
+    ></circle>
+
+    <circle
+      class="progress"
+      cx="50"
+      cy="50"
+      r="45"
+      [style.stroke-dashoffset]="283 - (283 * progress) / 100"
+    ></circle>
+  </svg>
+
+  <span class="arrow">↑</span>
+</div>

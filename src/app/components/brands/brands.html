@@ -1,0 +1,21 @@
+<section class="brands-section">
+
+  <div class="brands-container">
+    <div class="brands-viewport">
+      <div
+        class="brands-track"
+        [class.no-transition]="!transitionEnabled"
+        [style.transform]="'translateX(-' + (currentIndex * slideWidth) + 'px)'"
+      >
+
+        @for (brand of slides; track brand.name + $index) {
+          <div class="brand-item">
+            <img [src]="brand.img" [alt]="brand.name" />
+          </div>
+        }
+
+      </div>
+    </div>
+  </div>
+
+</section>

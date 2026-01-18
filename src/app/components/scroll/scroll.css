@@ -1,0 +1,70 @@
+.scroll-progress {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  transition: all 0.4s ease;
+
+  z-index: 999;
+}
+
+.scroll-progress.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* SVG */
+.scroll-progress svg {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 6;
+}
+
+/* BACKGROUND CIRCLE */
+circle.bg {
+  stroke: #e6f6f3;
+}
+
+/* PROGRESS CIRCLE */
+circle.progress {
+  stroke: #1dc9a0;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.25s linear;
+}
+
+/* ARROW */
+.arrow {
+  position: relative;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1dc9a0;
+  z-index: 2;
+}
+
+/* HOVER */
+.scroll-progress:hover {
+  transform: scale(1.1);
+}

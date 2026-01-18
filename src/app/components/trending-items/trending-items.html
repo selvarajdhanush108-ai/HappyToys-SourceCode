@@ -1,0 +1,65 @@
+<!-- CLOUD TOP -->
+<div class="cloud-wrap cloud-top">
+  <div class="cloud-layer back"></div>
+  <div class="cloud-layer front"></div>
+</div>
+
+<section class="trending-section fade-up">
+  <div class="trending-container">
+
+    <!-- HEADER -->
+    <div class="trending-header fade-up">
+      <h2>Trending Items</h2>
+
+      <ul class="tabs">
+        @for (cat of categories; track cat) {
+          <li
+            [class.active]="cat === activeCategory"
+            (click)="setCategory(cat)">
+            {{ cat }}
+          </li>
+        }
+      </ul>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="trending-content">
+
+      <!-- LEFT BANNER -->
+      <div class="promo-banner fade-up">
+        <img src="https://html.onertheme.com/babymart/assets/img/normal/ad1-1.png" alt="Trending Banner" />
+      </div>
+
+      <!-- PRODUCT GRID -->
+      <div class="product-grid">
+        @for (product of products; track product.name; let i = $index) {
+          <div class="product-card fade-up" [style.transitionDelay]="i * 80 + 'ms'">
+
+            @if (product.badge) {
+              <span class=""></span>
+            }
+
+            <img [src]="product.img" alt="product" />
+
+            <h4>{{ product.name }}</h4>
+
+            <div class="price">
+              <span class="current">{{ product.price }}</span>
+              @if (product.oldPrice) {
+                <del>{{ product.oldPrice }}</del>
+              }
+            </div>
+
+          </div>
+        }
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- CLOUD BOTTOM -->
+<div class="cloud-wrap cloud-bottom">
+  <div class="cloud-layer back"></div>
+  <div class="cloud-layer front"></div>
+</div>
